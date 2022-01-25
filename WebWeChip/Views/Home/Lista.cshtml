@@ -1,0 +1,65 @@
+﻿@using EntitiesWeChip
+@model List<Usuario>
+@{
+    ViewData["Title"] = "Controle de user";
+}
+
+<div class="row setup-content">
+    <div class="col text-center">
+        <div class="box box-info">
+
+            <div class="box-header with-border">
+                <h3 class="box-title" style="float:left; padding:15px;">Lista de usuários</h3>
+
+                <div class="box-body">
+
+                    <div class="table-responsive">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Nome </th>
+                                    <th>Cpf</th>
+                                    <th>Telefone</th>
+                                    <th>Credito</th>
+                                    <th>Status atual</th> 
+                                    <th>Cep </th>
+                                    <th>Rua</th>
+                                    <th>Numero</th>
+                                    <th>Complemento</th>
+                                    <th>Bairro</th> 
+                                    <th>Cidade</th> 
+                                    <th>Estado</th> 
+                                    <th></th> 
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (Usuario dados in Model)
+                                {
+                                    <tr>
+                                        <td>@dados.Nome</td>
+                                        <td>@dados.Cpf</td>
+                                        <td>@dados.Telefone</td>
+                                        <td>@dados.Credito</td>                                       
+                                        <td>@dados.StatusAtual</td>                                       
+                                        <td>@dados.Cep</td>                                       
+                                        <td>@dados.Rua</td>                                       
+                                        <td>@dados.Numero</td>                                       
+                                        <td>@dados.Complemento</td>                                       
+                                        <td>@dados.Bairro</td>                                       
+                                        <td>@dados.Cidade</td>                                       
+                                        <td>@dados.Estado</td>                                       
+                                        <td>@Html.ActionLink("Ofertar", "Ofertar", "Home", new { id = @dados.Id }, new { @class = "btn btn-sm btn-danger" })</td>
+
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
